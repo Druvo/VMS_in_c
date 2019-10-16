@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1571257478 source:d:\projects\visitor_management_system\main.c
+	<stdio.h>
+	<conio.h>
+	<string.h>
+
