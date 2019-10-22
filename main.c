@@ -38,13 +38,13 @@ void Enter(int id){
       printf("File does not exists \n");
       return;
     }
-    printf("Enter the name \n");
+    printf("What is your name? \n");
     scanf("%s", name);
-    printf("Enter the Phone number \n");
+    printf("What is your Phone number? \n");
     scanf("%s", number);
-    printf("Enter the visiting to \n");
+    printf("Who are you visiting to? \n");
     scanf("%s", visiting_to);
-    printf("Enter the purpose of visiting \n");
+    printf("Enter the purpose of visiting. \n");
     scanf("%s", purpose_of_visiting);
 
     fprintf(fptr, "Id    = %d\n", id);
@@ -157,7 +157,7 @@ void ShowVisitor(char dfolder[200]){
             if ((fptr = fopen(cd, "r")) == NULL)
             {
                 printf("Error! opening file");
-                scanf("%s",cd);
+                getch();
             }
             else{
                char str[1000];
@@ -170,8 +170,8 @@ void ShowVisitor(char dfolder[200]){
         }
         closedir(folder);
     }
-    char c[5];
-    scanf("%s",c);
+    getch();
+
     system("cls");
     AdminOptions();
 }
@@ -217,6 +217,10 @@ void main()
         printf("\n\t 1. Check-in");
         printf("\n\t 2. Check-out");
         printf("\n\t 3. Admin panel\n");
+
+
+
+        printf("\n\t\t\t ***Please note that admin pass is 'admin123'***\n");
 
         printf("\n\n\t Please chose a option\n");
         scanf("%d", &options);
