@@ -4,12 +4,26 @@
 	<ActiveTarget name="Debug" />
 	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
 		<Cursor>
+<<<<<<< HEAD
 			<Cursor1 position="1005" topLine="32" />
 		</Cursor>
 		<Folding>
 			<Collapse line="178" />
 			<Collapse line="197" />
 			<Collapse line="208" />
+=======
+			<Cursor1 position="1196" topLine="26" />
+		</Cursor>
+		<Folding>
+			<Collapse line="6" />
+			<Collapse line="59" />
+			<Collapse line="86" />
+			<Collapse line="116" />
+			<Collapse line="139" />
+			<Collapse line="177" />
+			<Collapse line="196" />
+			<Collapse line="207" />
+>>>>>>> e5f8a0da81bc75ae10563836fadd190b6230ae5b
 		</Folding>
 	</File>
 </CodeBlocks_layout_file>
