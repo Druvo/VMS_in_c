@@ -14,10 +14,11 @@ int CountFiles(char path[250]){
         while ((dir = readdir(folder)) != NULL)
         {
             /*printf("%s\n", dir->d_name);*/
-            if (dir->d_type == DT_REG)
-            {
-                file_count++;
-            }
+            if (!strcmp(dir->d_name, "."))
+                continue;
+            if (!strcmp(dir->d_name, ".."))
+                continue;
+            file_count++;
         }
         closedir(folder);
     }
@@ -38,20 +39,20 @@ void Enter(int id){
       printf("File does not exists \n");
       return;
     }
-    printf("Enter the name \n");
-    scanf("%s", name);
-    printf("Enter the Phone number \n");
-    scanf("%s", number);
-    printf("Enter the visiting to \n");
-    scanf("%s", visiting_to);
-    printf("Enter the purpose of visiting \n");
-    scanf("%s", purpose_of_visiting);
+    printf("\nEnter the name \n");
+    scanf(" %[^\n]s", name);
+    printf("\nEnter the Phone number \n");
+    scanf(" %[^\n]s", number);
+    printf("\nEnter the visiting to \n");
+    scanf(" %[^\n]s", visiting_to);
+    printf("\nEnter the purpose of visiting \n");
+    scanf(" %[^\n]s", purpose_of_visiting);
 
-    fprintf(fptr, "Id    = %d\n", id);
-    fprintf(fptr, "Name    = %s\n", name);
-    fprintf(fptr, "Phone number    = %s\n", number);
-    fprintf(fptr, "visiting to    = %s\n", visiting_to);
-    fprintf(fptr, "Purpose of visiting    = %s\n", purpose_of_visiting);
+    fprintf(fptr, "Id = %d\n", id);
+    fprintf(fptr, "Name = %s\n", name);
+    fprintf(fptr, "Phone number = %s\n", number);
+    fprintf(fptr, "visiting to = %s\n", visiting_to);
+    fprintf(fptr, "Purpose of visiting = %s\n", purpose_of_visiting);
     fclose(fptr);
     system("cls");
     printf("\n\t\t\t\t\t\t Successfully logged-in!!!");
@@ -89,7 +90,7 @@ void Admin(){
    const char password[15] = "admin123";
    char pass[20];
    printf("\n\t Please enter your password\n");
-   scanf("%s", pass);
+   scanf(" %[^\n]s", pass);
    if(strcmp(pass, password) == 0){
         system("cls");
         AdminOptions();
@@ -157,7 +158,7 @@ void ShowVisitor(char dfolder[200]){
             if ((fptr = fopen(cd, "r")) == NULL)
             {
                 printf("Error! opening file");
-                scanf("%s",cd);
+                getch();
             }
             else{
                char str[1000];
@@ -170,8 +171,8 @@ void ShowVisitor(char dfolder[200]){
         }
         closedir(folder);
     }
-    char c[5];
-    scanf("%s",c);
+    getch();
+
     system("cls");
     AdminOptions();
 }
@@ -217,6 +218,10 @@ void main()
         printf("\n\t 1. Check-in");
         printf("\n\t 2. Check-out");
         printf("\n\t 3. Admin panel\n");
+
+
+
+        //printf("\n\t\t\t ***Please note that admin pass is 'admin123'***\n");
 
         printf("\n\n\t Please chose a option\n");
         scanf("%d", &options);

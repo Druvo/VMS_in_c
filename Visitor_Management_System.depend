@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1571435333 source:d:\projects\visitor_management_system\main.c
+1571579432 source:d:\projects\visitor_management_system\main.c
 	<stdio.h>
 	<conio.h>
 	<string.h>
@@ -12,4 +12,11 @@
 	<conio.h>
 	<stdlib.h>
 	<windows.h>
+
+1572895933 source:d:\projects\visitor_management_system_c\main.c
+	<stdio.h>
+	<conio.h>
+	<string.h>
+	<dirent.h>
+	<stdlib.h>
 
